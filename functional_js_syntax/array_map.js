@@ -2,7 +2,8 @@
 const start = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // your code
-
+const reverse = start.map(num => start.length - num + 1);
+console.log(reverse);
 // expected output: Array [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 // ----------------------------------------------------------
@@ -10,7 +11,8 @@ const start = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const shipMates = [["Mal", "Captain"], ["Wash", "Pilot"], ["Zoey", "1st Mate"], ["Jayne", "Public Relations"]]
 
 // your code
-
+const mates = shipMates.map(([mateName, job]) => `${mateName}: ${job}`);
+console.log(mates);
 // expected output: Array ["Captain: Mal", etc...]
 
 // ----------------------------------------------------------
@@ -18,7 +20,18 @@ const shipMates = [["Mal", "Captain"], ["Wash", "Pilot"], ["Zoey", "1st Mate"], 
 const awayTeam = ["Picard", "Riker", "Troy", "Data"]
 
 // your code
+const checkEven = function (mateName) {
+    let chartNumber = mateName.length;
+    if (chartNumber % 2 == 0)
+        return `${mateName}: even`;
+    else 
+        return `${mateName}: odd`; 
+}
 
+const isEven = awayTeam.map(mateName => {
+    return checkEven(mateName);
+})
+console.log(isEven);
 // expected output: Array: ["Picard: even", "Riker: odd", etc...]
 
 // ----------------------------------------------------------
@@ -27,7 +40,8 @@ const awayTeam = ["Picard", "Riker", "Troy", "Data"]
 const sci_fi_shows = ['Manedlorian', 'Enterprise', 'Firefly', 'Battlestar Galactica']
 
 // your code
-
+const indexedShows = sci_fi_shows.map((show, index) => [show, index]);
+console.log(indexedShows);
 // expected output: Array [['Manedlorian', 0], ['Enterprise', 1], ['Firefly', 2], ['Battlestar Galactica', 3]]
 
 // ----------------------------------------------------------
@@ -36,7 +50,8 @@ const sci_fi_shows = ['Manedlorian', 'Enterprise', 'Firefly', 'Battlestar Galact
 const numbers = [1, 2, 3, 4]
 
 // your code
-
+const numbersArray = numbers.map((number, index, array) => [array]);
+console.log(numbersArray);
 // expected output: Array [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]
 
 // Having trouble with creating a 2D array? 

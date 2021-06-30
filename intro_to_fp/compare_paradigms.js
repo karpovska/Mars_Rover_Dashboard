@@ -1,18 +1,36 @@
 // Directions: Rewrite the imperative code below as Object-Oriented 
+class WarpDrive {
+    constructor(type, recipient){             
+        this.type = type
+        this.status = 'active'
+        this.warp = 2
+        this.recipient = recipient ? recipient : 'Captain'
+    }
+    
+    status_report(){        
+        if(this.status === 'active' && this.warp <= 4) {
+            return this.recipient += ', the engines are active and we could be going faster.'
+        } else if (this.status === 'active' && this.warp > 4) {
+            return this.recipient += ', the engines are active and we are going ' + this.warp + '.'
+        } else if (this.status === 'down') {
+            return this.recipient += ', the engines are down.'
+        } else {
+            return this.recipient += ', the comms are down and we can`t reach engineering.'
+        }        
+    }
 
-let status = 'active'
-let warp = 2
-let type = 'Dilithium Crystal'
-let status_report = 'Captain, '
+    set_status(status){
+        this.status = status;
+    }
 
-if(status === 'active' && warp <= 4) {
-    status_report += 'the engines are active and we could be going faster.'
-} else if (status === 'active' && warp > 4) {
-    status_report += 'the engines are active and we are going ' + warp + '.'
-} else if (status === 'down') {
-    status_report += 'the engines are down.'
-} else {
-    status_report += 'the comms are down and we can`t reach engineering.'
+    set_warp(integer){
+        this.warp = integer;
+    }
 }
 
-console.log(status_report)
+let enterprizeWarp = new WarpDrive('Dilithium Crystal');
+enterprizeWarp.set_warp = 2;
+console.log(enterprizeWarp.status_report());
+
+enterprizeWarp.set_warp = 6;
+console.log(enterprizeWarp.status_report());
