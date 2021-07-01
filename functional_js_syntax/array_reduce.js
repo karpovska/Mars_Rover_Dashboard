@@ -2,7 +2,8 @@
 const text = ['The ships', 'hung in the sky,', 'much the way', 'that bricks don`t']
 
 // Your Code Here
-
+const sentence = text.reduce((sentence, currentString) => `${sentence} ${currentString}`);
+console.log(sentence);
 // expected output: "The ships hung in the sky, much the way that bricks don't"
 
 // ----------------------------------------------------------
@@ -28,7 +29,14 @@ const scores = [
 ]
 
 // Your Code Here
-
+const bestScore = scores.reduce((bestScore, currentScore) => {
+    if(currentScore.score > bestScore.score){
+        return currentScore;        
+    }else{
+        return bestScore;
+    }
+})
+console.log(bestScore.team);
 // expected output: "C"
 
 // ----------------------------------------------------------
@@ -58,5 +66,13 @@ const ships = [
 ]
 
 // Your Code Here
-
+const fastestShip = ships.reduce((fastestShip, currentShip) => {
+    let currentSpeed = Number(currentShip.speed.substring(0, currentShip.speed.length - 1));
+    let fastestSpeed = Number(fastestShip.speed.substring(0, fastestShip.speed.length - 1));
+    if (currentSpeed > fastestSpeed)
+        return currentShip;
+    else 
+        return fastestShip;
+}, {speed: '', name: ''})
+console.log(fastestShip.name);
 // Expected output: Tie Fighters
