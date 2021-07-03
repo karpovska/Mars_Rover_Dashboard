@@ -101,6 +101,9 @@ const characters = [
 // Create an array containing only the names of Captains from all universes.
 
 // Your Code here
+const captains = characters.filter(character => character.role === 'Captain').map(character => character.name);    
+
+console.log(captains);
 
 // expected output: ['Mal Reynolds', 'Kathryn Janeway']
 
@@ -114,8 +117,13 @@ const characters = [
 
 // Your Code here
 
-// expected output:
+const universes = characters.map(character => character.universe).filter((value, index, array) => array.indexOf(value) === index);
 
+console.log(universes);
+
+const sortedByUniverse = universes.map(universe => characters.filter(character => character.universe === universe));
+// expected output:
+console.log(sortedByUniverse);
 // [ 
 //  [ 
 //    { name: 'Marvin the Paranoid Android',
@@ -196,7 +204,7 @@ const characters = [
 
 // Your Code here
 
-// expected output: [ Marvin the Paranoid Android, Peter Venkman, Dr. Daniel Jackson ]
+// expected output: [ Marvin the Paranoid And2roid, Peter Venkman, Dr. Daniel Jackson ]
 
 // ----------------------------------------------------------
 

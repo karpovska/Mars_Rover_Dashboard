@@ -8,7 +8,13 @@ const character = {
     job: 'First Mate'
 };
 
-console.log(Object.keys(character));
+//console.log(Object.keys(character));
+
+const propertyNames = Object.keys(character);
+console.log(propertyNames);
+
+const output = propertyNames.map(property => `This character has a(n) ${property}`);
+console.log(output);
 // Expected Output: 
 // This character has a(n) id.
 // This character has a(n) name.

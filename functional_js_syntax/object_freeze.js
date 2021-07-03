@@ -20,7 +20,7 @@ currentShow.currentSeason = 5
 // but if we freeze the object
 Object.freeze(currentShow);
 
-currentShow.currentSeason = 5;
+//currentShow.currentSeason = 5;
 // Throws an error and current_season remains unchanged
 
 
@@ -28,3 +28,14 @@ currentShow.currentSeason = 5;
 
 // ----------------------------------------------------------
 // Directions: Create your own object and freeze it!
+
+const readingChallenge = {
+    year: 2021,
+    booksPleged: 24,
+    time: 365,
+    averageBooksPleged: 50
+}
+
+Object.freeze(readingChallenge);
+
+//readingChallenge.year = 2022;

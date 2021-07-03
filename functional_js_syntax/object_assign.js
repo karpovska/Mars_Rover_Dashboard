@@ -42,3 +42,14 @@ state = Object.assign(state, incomingState);
 // } 
 
 // Your Code here
+const newState = {
+    name: 'Xena',
+    role: 'Princess warrior',
+    favoriteThing: {
+        item: 'Horse',
+        details: 'Love to ride on the horse and look fabulous'
+    }
+}
+
+state = Object.assign(state, newState);
+console.log(state);
