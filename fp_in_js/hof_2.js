@@ -8,6 +8,19 @@ weaponsWithNoises = [
 
 function weaponsFromUniverse(universe) {
 	// ...Your code here!
+	
+	const appropriateWeapons = weaponsWithNoises.filter(weapon => weapon.universe === 'Star Wars');
+	
+	const useWeapon = (weaponName) => {
+		const weapon = appropriateWeapons.find(weapon => weaponName == weapon.name)
+
+		if (weapon){
+			console.log(`used ${weapon.name}: ${weapon.noise}`);
+		} else {
+			console.log(`${weaponName} is not a part of the Star Wars universe`);
+		}
+	}
+	return useWeapon;
 }
 
 // USAGE
@@ -15,3 +28,4 @@ const useStarWarsWeapon = weaponsFromUniverse('Star Wars')
 
 useStarWarsWeapon('Blaster') // console logs 'used Blaster: Pew Pew'
 useStarWarsWeapon('Noisy Cricket') // console logs 'Noisy Cricket is not a part of the Star Wars universe'
+useStarWarsWeapon('Lightsaber');
