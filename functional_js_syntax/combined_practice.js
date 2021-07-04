@@ -203,6 +203,8 @@ console.log(sortedByUniverse);
 // Create an array containing characters' names who are the only character listed in their universe.
 
 // Your Code here
+const uniqueCharacters = sortedByUniverse.filter(character => character.length === 1).map(([character]) => character.name);
+console.log(uniqueCharacters);
 
 // expected output: [ Marvin the Paranoid And2roid, Peter Venkman, Dr. Daniel Jackson ]
 
@@ -215,5 +217,8 @@ console.log(sortedByUniverse);
 // What is the average power level across all characters?
 
 // Your code here
-
+const averagePower = characters.reduce((total, current) => {  
+  return (total + current.power_level)/characters.length;
+}, 0);
+console.log(averagePower);
 // expected output: 68.71319452795147
