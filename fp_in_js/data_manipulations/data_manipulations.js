@@ -61,5 +61,13 @@ console.log(tooCloseAsteroids);
 
 // Alert ---------------------------------------------------
 // 5. Of all the near-earth objects for this date, find the time that the asteroid with the nearest miss will be closest to earth. 
-
-
+const closest = tooCloseAsteroids.reduce((closest, current) => {
+    const currentDistance = parseFloat(current.closestApproach);
+    const closestDistance = parseFloat(closest.closestApproach);
+    if (currentDistance > closestDistance)
+        return closest;
+    else 
+        return current;
+})
+console.log('Closesnt distance: ');
+console.log(closest.closestApproach);
