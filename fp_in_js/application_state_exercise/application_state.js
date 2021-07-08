@@ -7,7 +7,7 @@ let store = {
     }
 }
 
-const render = (root, state) => {
+const render = (root, state) => {    
     root.innerHTML = App(state)
 }
 
@@ -32,3 +32,10 @@ window.addEventListener('load', () => {
 // This won't be a pure function, instead of a return, call the render method again
 
 // Your Code
+window.addEventListener('click', () => {
+    updateStore(store, {user: {first_name: 'Oksana', last_name: 'Karpova'}});
+})
+const updateStore = (store, newState) => {
+    store = Object.assign(store, newState);    
+    render(root, store);
+  }
