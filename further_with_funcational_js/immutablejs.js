@@ -1,4 +1,5 @@
 // import immutablejs.js
+//npm install immutable - install from the terminal
 const Immutable = require('immutable');
 
 // PART 1. Getting and Setting values
@@ -30,6 +31,7 @@ const map2 = Immutable.Map({
 // YOUR TURN --------------------------------------------------------------
 // create `map3` immutable object by merging `map1` and `map2`
 
+const map3 = map1.merge(map2);
 console.log(map1.toJS())
 console.log(map2.toJS())
 console.log(map3.toJS())
@@ -56,6 +58,7 @@ console.log(map4.toJS())
 
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
+console.log(map3);
 
 // PART 3. Arrays and Immutable Lists
 
@@ -88,7 +91,6 @@ console.log(Array.from(myList2));
 
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
-
 
 // STRETCH CHALLENGE ----------------------------------------------------------------------
 // 3. Remove Jabba the Hut from the Immutable List
@@ -131,3 +133,16 @@ const characters = [
     power_level: 140
   }
 ]
+
+const myImmutableArray = Immutable.List(characters);
+const myImmutableArray2 = myImmutableArray.push({
+  name: 'Oksana Karpova', 
+  role: 'Program Architect', 
+  universe: 'Post-patriarchat era', 
+  weapon: 'Smart brain',
+  powerLevel: 1000000
+});
+console.log(Array.from(myImmutableArray2))
+
+const updatedArray = myImmutableArray2.delete(1);
+console.log(Array.from(updatedArray));
