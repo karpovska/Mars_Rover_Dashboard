@@ -1,5 +1,7 @@
 # nd032-c2-functional-programming-with-javascript-starter
 
+Please open the branch 'project' in this repo. Thanks!
+
 # Overview
 This is the repo for all the starter code for the Udacity Intermediate Javascript Nanodegree Course 2 on Functional Programming with JavaScript.
 
